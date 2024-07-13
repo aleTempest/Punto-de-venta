@@ -26,7 +26,9 @@ class StoreQuotationRequest extends FormRequest
             'id_client' => 'required|exists:clients,id',
             'quotation_date' => 'required|date',
             'validity' => 'required|date|after_or_equal:quotation_date',
-            'comments' => 'nullable|string|max:255'
+            'comments' => 'nullable|string|max:255',
+            'amount' => 'nullable|numeric',
+            'total' => 'nullable|numeric'
         ];
     }
 }

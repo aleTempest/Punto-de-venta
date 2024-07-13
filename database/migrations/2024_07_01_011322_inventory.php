@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignId('product_id')->references('id')->on('products')->cascadeOnDelete();
             $table->date('in_date');
             $table->date('out_date');
+            $table->integer('amount');
+            $table->integer('movement'); // TODO relacionar con compras y ventas
+            $table->integer('reason');
             $table->timestamps();
         });
     }

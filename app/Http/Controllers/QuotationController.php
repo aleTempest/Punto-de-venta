@@ -36,7 +36,14 @@ class QuotationController extends Controller
      */
     public function store(StoreQuotationRequest $request)
     {
-        Quotation::create($request->validated());
+        $validated = $request->validated();
+        $product = Product::findOrFail($validated['id_product']);
+
+        $price = $product->price;
+        $total = $price * $validated['amount'];
+        $validated['total'] = $total;
+        Quotation::create($validated);
+
         return to_route('quotations.index');
     }
 
@@ -48,7 +55,6 @@ class QuotationController extends Controller
         $products = Product::all();
         $clients = Client::all();
         return view('quotations.show', compact('quotation','products', 'clients'));
-
     }
 
     /**

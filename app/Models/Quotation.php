@@ -17,7 +17,9 @@ class Quotation extends Model
         'id_client',
         'quotation_date',
         'validity',
-        'comments'
+        'comments',
+        'amount',
+        'total'
     ];
 
     public function product() : BelongsTo
