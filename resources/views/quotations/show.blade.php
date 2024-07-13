@@ -30,6 +30,14 @@
                                 <label class="block text-sm font-medium leading-5 text-gray-700">Comments</label>
                                 <p class="mt-1 text-sm leading-5 text-gray-900">{{ $quotation->comments }}</p>
                             </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium leading-5 text-gray-700">Amount</label>
+                                <p class="mt-1 text-sm leading-5 text-gray-900">{{ $quotation->amount }}</p>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium leading-5 text-gray-700">Total</label>
+                                <p class="mt-1 text-sm leading-5 text-gray-900">{{ $quotation->total }}</p>
+                            </div>
                         </form>
                     </div>
                 </div>
